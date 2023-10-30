@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Skepseis" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Yugen Education</title>
+        <meta name="description" content="Yugen School of Accounting & Taxation aims to provide world class training for Global Accounting and Taxation qualifications and develop the professional Accountant of upcoming Days.">
+		<meta name="keywords" content="accounting and financial courses in calicut, Accounting courses, GST Courses">
+		
+        <meta property="og:title" content="Best Accounting Training Institute and Courses in Calicut, Kerala" />
+		<meta property="og:description" content="Yugen School of Accounting & Taxation aims to provide world class training for Global Accounting and Taxation qualifications and develop the professional Accountant of upcoming Days." />
+		<meta property="og:url" content="http://yugeneducation.com/" />
+		<meta property="og:site_name" content="Yugen Education" />
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+		<link rel="stylesheet" href="assets/css/blog.css">
+        <!-- Custom CSS -->
+        <link href="assets/css/styles.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
+            <!-- ============================================================== -->
+            <!-- Top header  -->
+            <!-- ============================================================== -->
+            <!-- Start Navigation -->
+            <div class="header header-light head-shadow">
+                <div class="container">
+                    <nav id="navigation" class="navigation navigation-landscape">
+                        <div class="nav-header">
+                            <a class="nav-brand" href="index.html">
+                                <img src="assets/img/logo.png" class="logo" alt="" />
+                            </a>
+                            <div class="nav-toggle"></div>
+                            <div class="mobile_nav">
+                                <ul>
+                                    <li>
+                                        <a href="tel:+914952962318" class="crs_yuo12 w-auto text-white theme-bg">
+                                            <span class="embos_45"><i class="fas fa-phone mr-1"></i>Call Now</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="nav-menus-wrapper">
+                            <ul class="nav-menu">
+                                <!-- <li class="active"><a href="#">Home<span class="submenu-indicator"></span></a>
+									<ul class="nav-dropdown nav-submenu">
+										<li><a href="index-2.html">Home 1</a></li>
+									</ul>
+								</li> -->
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+								<li class="dropdown">
+									<a>Courses</a>
+									<ul class="dropdown-menu">
+										<li><a href="mftg.html">MFTG Course</a></li>
+										<li><a href="mfa.html">MFA Course</a></li>
+										<li><a href="git.html">GIT Course</a></li>
+										
+										
+									</ul>
+								</li>
+                                <li><a href="gallery.php">Gallery</a></li>
+                                <li class="active"><a href="blog.php">Blog</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                            <ul class="nav-menu nav-menu-social align-to-right">
+                                <!-- <li>
+									<a href="#" class="alio_green" data-toggle="modal" data-target="#login">
+										<i class="fas fa-sign-in-alt mr-1"></i><span class="dn-lg">Sign In</span>
+									</a>
+								</li> -->
+                                <li class="add-listing theme-bg">
+                                    <a href="tel:+914952962318" class="text-white">Call Now</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- End Navigation -->
+            <div class="clearfix"></div>
+            <!-- ============================================================== -->
+            <!-- Top header  -->
+            <!-- ============================================================== -->
+
+			<!-- ============================ Page Title Start================================== -->
+			<section class="page-title bg-cover" style="background:url(assets/img/banner-6.jpg)no-repeat;" data-overlay="8">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+							
+							<div class="breadcrumbs-wrap">
+								<h1 class="breadcrumb-title text-light">Blog</h1>
+								<nav class="transparent">
+									<ol class="breadcrumb p-0">
+										<li class="breadcrumb-item"><a href="#" class="text-light">Home</a></li>
+										<li class="breadcrumb-item active " aria-current="page"><a href="blog.php" class="theme-cl">Blog</a></li>
+									</ol>
+								</nav>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ============================ Page Title End ================================== -->
+			<div class="blog-content">
+				<div class="container">
+
+					<?php
+					include("admin/root/db.php");
+						$sql ="SELECT * FROM blog";
+						$result =$mysqli->query($sql);
+						if ($result->num_rows > 0){
+							while ($row=$result -> fetch_assoc())
+						{
+						?>
+				  <div class="card">
+					<div class="card__header">
+					  <img src="admin/gallery/<?php echo $row ["image"]; ?>" alt="card__image" class="card__image" width="600">
+					</div>
+					<div class="card__body">
+					  <h4><?php echo $row ["title"]; ?></h4>
+					  <p><?php echo $row ["description"]; ?></p>
+					</div>
+					<div class="card__footer">
+					  <div class="user">
+						<div class="user__info">
+						  <h5><?php echo $row ["author"]; ?></h5>
+						  <small><?php echo $row ["date"]; ?></small>
+						</div>
+					  </div>
+					  <div class="button-div">
+						<a href="blog-details.php?msg=<?php echo $row['id'];?>">
+							<button>Read More</button>
+							</a>
+					  </div>
+					</div>
+				  </div>
+				  
+				  <?php
+				}
+			}
+				  ?>
+				  
+				  
+				 
+				 
+				</div>
+				</div>
+			<!-- ============================ About Detail ================================== -->
+<!--
+			<section>
+				<div class="container">
+					<div class="row align-items-center justify-content-between">
+						<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+							<div class="lmp_caption">
+								<span class="theme-cl">About Us</span>
+								<h2 class="mb-3">What We Do & Our Aim</h2>
+								<p>YUGEN SCHOOL OF ACCOUNTING & TAXATION aims to provide world class training for Global Accounting and Taxation qualifications and develop the professional Accountant of upcoming Days. Our faculties are comprising of professionals and academicians with years of industry experienced and CA Article ship members. Our institutions have air-conditioned classroom with modern facilities, Wi-Fi enabled and ample parking space. Our flagship courses are MFTG (Master in Finance Taxation and GST) & GIT (GST, INCOME TAX AND TDS).<br>
+								Main objective of YUGEN is reduce the skill gap in accounting domain through quality skill development education.  Plenty of job opportunities are vacant in accounting fields due to the lack of skilled accounting people. YUGEN tailored the courses to attain that objective.  Who completed at the course from YUGEN can enter in to job directly without further repeated training.<br>
+								</p>
+							</div>
+						</div>
+						<div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
+							<div class="lmp_thumb">
+								<img src="assets/img/about.jpg" class="img-fluid" alt="" />
+							</div>
+						</div>
+					</div>
+					<div class="row align-items-center justify-content-between">
+						<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+							<div class="lmp_caption">
+								<p>YUGEN BOARD OF STUDIES (BoS) is the basic constituent of the academic system of YUGEN. Its functions will include framing the content of various courses, reviewing and updating the content from time to time, introducing new courses according to the demand of Industry relevance(R&D).<br>
+								YUGEN having own ERP software for managing administration process called “YUGEN Suite”. Own quality course material prepared by Chattered Accountant (CA) Trainers, provides for students to ensure the standard of the course.  The ambiance of Airconditioned Theory and Practical lab can make students more enthusiastic for successful completion of their course. Online Examination system is the golden feather of YUGEN for keeping Quality Education. All examinations are evaluated by YUGEN Examination System called “YES”.  After the successful completion with appropriate GRADE, YUGEN will issue MERIT CERTIFICATE.<br>
+								YUGEN CAREER ZONE is the back born of the placement wing.  Identify the Employers requirement and full fill with right candidate select from YUGEN</p>
+							</div>
+						</div>
+						<div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
+							<div class="mb-3 mr-4 ml-lg-0 mr-lg-4">
+								<div class="d-flex align-items-center">
+								  <div class="rounded-circle bg-light-success theme-cl p-2 small d-flex align-items-center justify-content-center">
+									<i class="fas fa-check"></i>
+								  </div>
+								  <h6 class="mb-0 ml-3">Full lifetime Support</h6>
+								</div>
+							</div>
+							<div class="mb-3 mr-4 ml-lg-0 mr-lg-4">
+								<div class="d-flex align-items-center">
+								  <div class="rounded-circle bg-light-success theme-cl p-2 small d-flex align-items-center justify-content-center">
+									<i class="fas fa-check"></i>
+								  </div>
+								  <h6 class="mb-0 ml-3">Certificate of completion</h6>
+								</div>
+							</div>
+							<div class="mb-3 mr-4 ml-lg-0 mr-lg-4">
+								<div class="d-flex align-items-center">
+								  <div class="rounded-circle bg-light-success theme-cl p-2 small d-flex align-items-center justify-content-center">
+									<i class="fas fa-check"></i>
+								  </div>
+								  <h6 class="mb-0 ml-3">Flexible Timings</h6>
+								</div>
+							</div>
+							<div class="text-left mt-4"><a href="https://docs.google.com/forms/d/e/1FAIpQLScVvMKIoTw9K_QqEeG0CeTM88Ev1hTI9CkFfi4-7_2c2d5T_w/viewform" class="btn btn-md text-light theme-bg">Join Now</a></div>
+						</div>
+					</div>
+				</div>
+			</section>
+-->
+			<!-- ============================ About Detail ================================== -->
+
+<!--
+			<section class="gray">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-7 col-md-8">
+							<div class="sec-heading center">
+								<h2>Course  <span class="theme-cl">Includes</span></h2>
+							</div>
+						</div>
+					</div>
+					<div class="customer-logos slider">
+						<div class="slide"><img src="assets/img/icons/gst.png"></div>
+						<div class="slide"><img src="assets/img/icons/it.png"></div>
+						<div class="slide"><img src="assets/img/icons/sap.png"></div>
+						<div class="slide"><img src="assets/img/icons/tds.png"></div>
+						<div class="slide"><img src="assets/img/icons/gccvat.png"></div>
+						<div class="slide"><img src="assets/img/icons/ae.png"></div>
+						<div class="slide"><img src="assets/img/icons/bma.png"></div>
+						<div class="slide"><img src="assets/img/icons/tp.png"></div>
+						<div class="slide"><img src="assets/img/icons/esi.png"></div>
+						<div class="slide"><img src="assets/img/icons/epf.png"></div>
+					</div>
+				</div>
+			</section>
+-->
+
+			
+			<!-- ============================ Students Reviews ================================== -->
+<!--
+			<section>
+				<div class="container">
+				
+					<div class="row justify-content-center">
+						<div class="col-lg-7 col-md-8">
+							<div class="sec-heading center">
+								<h2>Our Students <span class="theme-cl">Reviews</span></h2>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row justify-content-center">
+						<div class="col-xl-12 col-lg-12 col-sm-12">
+							<div class="reviews-slide space">
+								<!-- Single Item ->
+								<div class="single_items lios_item">
+									<div class="_testimonial_wrios shadow_none">
+										<div class="_testimonial_flex">
+											<div class="_testimonial_flex_first">
+												<div class="_tsl_flex_thumb">
+													<img src="assets/img/user.jpg" class="img-fluid" alt="">
+												</div>
+												<div class="_tsl_flex_capst">
+													<h5>Thanvira Salam</h5>
+													<div class="_ovr_posts"><span>Calicut</span></div>
+													<div class="_ovr_rates"><span><i class="fa fa-star"></i></span>4.7</div>
+												</div>
+											</div>
+										</div>
+										<div class="facts-detail">
+											<p>I am glad to be as a former student of Yugen. I had a best experience and training from Yugen and the faculties are Very talented and experienced. Yugen provides good future to their students.</p>
+										</div>
+									</div>
+								</div>
+								<!-- Single Item ->
+								<div class="single_items lios_item">
+									<div class="_testimonial_wrios shadow_none">
+										<div class="_testimonial_flex">
+											<div class="_testimonial_flex_first">
+												<div class="_tsl_flex_thumb">
+													<img src="assets/img/user.jpg" class="img-fluid" alt="">
+												</div>
+												<div class="_tsl_flex_capst">
+													<h5>Aswanth Mohan</h5>
+													<div class="_ovr_posts"><span>Malappuram</span></div>
+													<div class="_ovr_rates"><span><i class="fa fa-star"></i></span>4.8</div>
+												</div>
+											</div>
+										</div>
+										<div class="facts-detail">
+											<p>I am a student recently finished studying from Yugen. I had an awesome experience. Teachers were awesome and so supportive. Teaching methods are so advanced and practical oriented.</p>
+										</div>
+									</div>
+								</div>
+								<!-- Single Item ->
+								<div class="single_items lios_item">
+									<div class="_testimonial_wrios shadow_none">
+										<div class="_testimonial_flex">
+											<div class="_testimonial_flex_first">
+												<div class="_tsl_flex_thumb">
+													<img src="assets/img/user.jpg" class="img-fluid" alt="">
+												</div>
+												<div class="_tsl_flex_capst">
+													<h5>Ayisha M</h5>
+													<div class="_ovr_posts"><span>Calicut</span></div>
+													<div class="_ovr_rates"><span><i class="fa fa-star"></i></span>5</div>
+												</div>
+											</div>
+										</div>
+										<div class="facts-detail">
+											<p>Recently completed my course from Yugen. It was a nice experience, Teachers and management are very friendly and supportive. Advanced study techniques and well arranged facilities.</p>
+										</div>
+									</div>
+								</div>
+								<!-- Single Item ->
+								<div class="single_items lios_item">
+									<div class="_testimonial_wrios shadow_none">
+										<div class="_testimonial_flex">
+											<div class="_testimonial_flex_first">
+												<div class="_tsl_flex_thumb">
+													<img src="assets/img/user.jpg" class="img-fluid" alt="">
+												</div>
+												<div class="_tsl_flex_capst">
+													<h5>Susan Thomas</h5>
+													<div class="_ovr_posts"><span>Kannur</span></div>
+													<div class="_ovr_rates"><span><i class="fa fa-star"></i></span>4.7</div>
+												</div>
+											</div>
+										</div>
+										<div class="facts-detail">
+											<p>Yugen provides good future to students who persuade accounting as their profession. They also maintain good relationship with students. They provide Modern Labs facilities and using advanced softwares.</p>
+										</div>
+									</div>
+								</div>							
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+        -->
+			<!-- ============================ Students Reviews End ================================== -->
+			
+			<!-- ============================ Call To Action ================================== ->
+			<section class="theme-bg call_action_wrap-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="call_action_wrap">
+                                <div class="call_action_wrap-head">
+                                    <h3>Do You Have Questions ?</h3>
+                                    <span>We'll help you to grow your career and growth.</span>
+                                </div>
+                                <a href="contact.html" class="btn btn-call_action_wrap">Contact Us Today</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+			<!- ============================ Call To Action End ================================== -->
+			
+			<!-- ============================ Footer Start ================================== -->
+			<footer class="dark-footer skin-dark-footer style-2">
+                <div class="footer-middle">
+                    <div class="container">
+                        <div class="row">
+							
+							<div class="col-lg-4 col-md-4">
+								<div class="footer_widget">
+									<img src="assets/img/logo-light.png" class="img-footer small mb-2" alt="" />
+									<p>Yugen School of Accounting & Taxation aims to provide world class training for Global Accounting and Taxation qualifications and develop the professional Accountant of upcoming Days.</p>
+									<a href="assets/yugen.pdf" class="btn theme-bg btn-md text-white">Download Brochure</a>
+								</div>
+							</div>
+							
+							<div class="col-lg-7 col-md-7 ml-auto">
+								<div class="row">
+									<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+										<div class="footer_widget">
+											<h4 class="widget_title">Company</h4>
+											<ul class="footer-menu">
+												<li><a href="about.html">About</a></li>
+												<li><a href="courses.html">Courses</a></li>
+												<li><a href="gallery.php">Gallery</a></li>
+												<li><a href="contact.html">Contact Us</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+										<div class="footer_widget">
+											<h4 class="widget_title">Social</h4>
+											<ul class="footer-menu">
+												<li><a href="https://www.facebook.com/yugeneducation/">Facebook</a></li>
+												<li><a href="https://www.instagram.com/yugeneducation/">Instagram</a></li>
+												<li><a href="https://www.youtube.com/channel/UCJJeE8A9jJMWBe7Lyz-D5Sw">Youtube</a></li>
+												<li><a href="https://wa.me/919961882044">Whatsapp</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-12">
+										<div class="footer_widget">
+											<h4 class="widget_title">Admin Office</h4>
+											<ul class="footer-menu">
+												<li>Yugen Education, Mihraj Shopping Centre, Near Bypass Junction, Perumanna (PO), Kozhikode - 673019</li>
+												<li><a href="tel: +914952962318">+914952962318</a></li>
+												<li><a href="tel: +919961882044">+919961882044</a></li>
+												<li><a href="mailto: yugeneducations@gmail.com"> yugeneducations@gmail.com</a></li>
+											</ul>
+										</div>
+									</div>								
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-12 col-md-12 text-center">
+                                <p class="mb-0">© 2023 Yugen Education. Powered By <a href="https://theleograph.com/">The Leograph</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+			<!-- ============================ Footer End ================================== -->
+			
+			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Wrapper -->
+		<!-- ============================================================== -->
+
+		<!-- ============================================================== -->
+		<!-- All Jquery -->
+		<!-- ============================================================== -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/select2.min.js"></script>
+		<script src="assets/js/slick.js"></script>
+		<script src="assets/js/moment.min.js"></script>
+		<script src="assets/js/daterangepicker.js"></script> 
+		<script src="assets/js/summernote.min.js"></script>
+		<script src="assets/js/metisMenu.min.js"></script>	
+		<script src="assets/js/custom.js"></script>
+		<!-- ============================================================== -->
+		<!-- This page plugins -->
+		<!-- ============================================================== -->		
+
+<!-- GetButton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "+919961882044", // WhatsApp number
+            call: "+914952962318", // Call phone number
+            call_to_action: "Contact us", // Call to action
+            button_color: "#129BF4", // Color of button
+            position: "left", // Position may be 'right' or 'left'
+            order: "whatsapp,call", // Order of buttons
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
+
+
+	</body>
+</html>
